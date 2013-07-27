@@ -1,0 +1,12 @@
+<%= form_for [:admin, category] do |f| %>
+  <h2><%= title %></h2>
+
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+  </ul>
+  
+  <%= f.submit %>
+<% end %>

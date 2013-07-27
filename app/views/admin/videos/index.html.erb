@@ -1,0 +1,11 @@
+<%= link_to "Add a Video", new_admin_video_path %>
+
+<ul>
+<% @videos.each do |video| %>
+  <li><%= link_to video.title, edit_admin_video_path(video) %></li>
+<% end %>
+</ul>
+
+<% if @videos.empty? %>
+  There are no videos.
+<% end %>

@@ -1,0 +1,11 @@
+<%= link_to "Add Content", new_admin_content_path %>
+
+<ul>
+<% @contents.each do |content| %>
+  <li><%= link_to content.key, edit_admin_content_path(content) %></li>
+<% end %>
+</ul>
+
+<% if @contents.empty? %>
+  There are no contents.
+<% end %>

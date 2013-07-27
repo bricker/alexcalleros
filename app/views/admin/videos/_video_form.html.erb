@@ -1,0 +1,29 @@
+<%= form_for [:admin, video] do |f| %>
+  <h2><%= title %></h2>
+
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+  
+    <li>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </li>
+
+    <li>
+      <%= f.label :video_embed_url %>
+      <%= f.url_field :video_embed_url %>
+    </li>
+
+    <li>
+      <%= f.label :category %>
+      <%= f.collection_select :category, Category.all, :id, :title %>
+    </li>
+
+
+  </ul>
+  
+  <%= f.submit %>
+<% end %>

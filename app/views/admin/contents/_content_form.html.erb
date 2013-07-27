@@ -1,0 +1,17 @@
+<%= form_for [:admin, content] do |f| %>
+  <h2><%= title %></h2>
+
+  <ul>
+    <li>
+      <%= f.label :key %>
+      <%= f.text_field :key %>
+    </li>
+  
+    <li>
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </li>
+  </ul>
+  
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+</head>
+
+<body>
+  <%= yield %>
+
+  <% if logged_in? %>
+  <ul>
+    <li><%= link_to "Add a Video", new_admin_video_path %></li>
+    <li><%= link_to "Edit Content", admin_contents_path %></li>
+    <li><%= link_to "Edit Categories", admin_categories_path %></li>
+    <li><%= link_to "AlexCalleros.com Home", root_path %></li>
+    <li><%= link_to "Admin Home", admin_root_path %></li>
+    <li><%= link_to "Logout", admin_logout_path %></li>
+  </ul>
+  <% end %>
+</body>
+</html>

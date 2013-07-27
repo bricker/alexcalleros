@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Alex Calleros</title>
+
+  <%= csrf_meta_tags %>
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <LINK REL="SHORTCUT ICON" HREF="/images/favicon.png"> 
+
+
+  <script src="/js/SpryAccordion.js" type="text/javascript"></script>
+  <link href="/css/SpryAccordion.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+  <!--
+  function MM_swapImgRestore() { //v3.0
+    var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+  }
+  function MM_preloadImages() { //v3.0
+    var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+      var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+      if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+  }
+
+  function MM_findObj(n, d) { //v4.01
+    var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+      d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+    if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+    if(!x && d.getElementById) x=d.getElementById(n); return x;
+  }
+
+  function MM_swapImage() { //v3.0
+    var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+     if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+  }
+  //-->
+  </script>
+
+
+  <script type="text/javascript" src="/js/shadowbox/shadowbox-base.js"></script>
+  <script type="text/javascript" src="/js/shadowbox/shadowbox.js"></script>
+  <script type="text/javascript" src="/js/shadowboxmod.js"></script>
+
+</head>
+
+<body>
+
+
+<div id="container">
+  <div id="header"><img src="/images/body/header.png" alt="Alex Calleros" />
+    Writer/Director @ Finite Films</div><!-- end #header -->
+        <div id="menu">
+        <a href="about.html" rel="shadowbox[about];width=840;height=740" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('About','','/images/about_over.png',1)"><img src="/images/about.png" alt="About" name="About" border="0" id="About" /></a>
+        <a href="pdf/Alex_Calleros_Resume_2011.pdf" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Resume','','/images/resume_over.png',1)"><img src="/images/resume.png" alt="Resume" name="Resume" border="0" id="Resume" /></a>
+        <a href="mailto:Alex@AlexCalleros.com" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Contact','','/images/contact_over.png',1)"><img src="/images/contact.png" alt="Contact" name="Contact" border="0" id="Contact" /></a>
+        </div><!-- end menu -->
+
+
+        <%= yield %>
+
+
+  <div id="footer">
+            <div id="menu">
+        <a href="videos/demoreel/demoreel.mov" rel="shadowbox[reel];width=640;height=360" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Reel','','/images/reel_over.png',1)"><img src="/images/reel.png" alt="Reel" name="Reel" border="0" id="Reel" /></a>
+        <a href="http://www.youtube.com/user/AlexCallerosDotCom" TARGET="_blank" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('YouTube','','/images/youtube_over.png',1)"><img src="/images/youtube.png" alt="YouTube" name="YouTube" border="0" id="You Tube" /></a>
+        <a href="http://www.vimeo.com/user2162030" TARGET="_blank" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Vimeo','','/images/vimeo_over.png',1)"><img src="/images/vimeo.png" alt="Vimeo" name="Vimeo" border="0" id="Vimeo" /></a>
+
+        </div><!-- end menu -->
+        <img src="/images/footer.png" /><a href="http://rushhavendesign.com"><img src="/images/footer2.png" /></a>
+ <!-- <div class="copyright"><p> ©2007-2011 ALEX CALLEROS. ALL RIGHTS RESERVED. SITE DESIGNED BY RUSH HAVEN DESIGN.</div> --!>
+ 
+ 
+  
+  
+  <!-- end #footer --></div>
+<!-- end #container --></div>
+
+  
+<script type="text/javascript">
+<!--
+var Accordion = new Spry.Widget.Accordion("Accordion");
+//-->
+</script>
+</body>
+</html>

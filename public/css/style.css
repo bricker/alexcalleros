@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* LINKS */
+
+a:link { color: #FFFFFF; text-decoration: none;}
+a:visited {color: #FFFFFF; text-decoration: none}
+a:hover {color: #00aeef; text-decoration: none;}
+a:active {color: #00aeef; text-decoration: none;}
+
+/* BODY ELEMENTS */
+
+body {
+    background: url(http://alexcalleros.com/images/background1.png);
+    background-repeat: repeat;
+    color: #ffffff;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 100%;
+}
+#container {
+    width: 980px;
+    height: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: auto;
+    margin-top: px;
+    margin-right: ;
+    margin-bottom: 0;
+    margin-left: ;
+    padding-left:90px;
+    padding-top:25px;
+}
+#header {
+    text-align: left;
+    height: 50px;
+}
+#menu { 
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #FFFFFF; 
+    font-weight: bold;
+    text-align:left;
+    margin-top: 50px;
+}
+#mainContent {
+    margin-top: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 900px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    text-align:left;
+    
+}
+
+#footer {
+    width: 900px;
+    height:97px;
+}
+
+#footer p {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #FFFFFF; 
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align:left;
+}
+
+#copyright {
+    font-family: helvetica, arial;
+    font-color: #fff;
+    font-style: oblique;
+    
+}
+
+/* IMPORANT MODIFICATIONS */
+
+*{ margin: 0px; padding: 0px; }
+#clear { clear:both; }
+img { border:medium none !important; }
+#twitter_update_list li {   list-style-type: square;
+        list-style-position: inside;
+        padding-top:5px;}
+
+
+form { 
+    padding: 10px;
+    margin: 10px;
+    background: #aaa;
+    width: 450px;
+}
+    form ul li {
+        list-style-type: none;
+    }
+
