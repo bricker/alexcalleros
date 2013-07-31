@@ -1,20 +1,40 @@
 <!doctype html>
 <html>
 <head>
+  <%= stylesheet_link_tag "admin" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <%= yield %>
+  <div class="navbar">
+    <a class="navbar-brand" href="/">Alex Calleros</a>
 
   <% if logged_in? %>
-  <ul>
-    <li><%= link_to "Add a Video", new_admin_video_path %></li>
-    <li><%= link_to "Edit Content", admin_contents_path %></li>
-    <li><%= link_to "Edit Categories", admin_categories_path %></li>
-    <li><%= link_to "AlexCalleros.com Home", root_path %></li>
-    <li><%= link_to "Admin Home", admin_root_path %></li>
-    <li><%= link_to "Logout", admin_logout_path %></li>
-  </ul>
+    <ul class="nav navbar-nav">
+      <li class="<%=active_for('home')%>"><%= link_to "Admin", admin_root_path %></li>
+      <li class="<%=active_for('videos')%>"><%= link_to "Videos", admin_videos_path %></li>
+      <li class="<%=active_for('categories')%>"><%= link_to "Categories", admin_categories_path %></li>
+      <li class="<%=active_for('contents')%>"><%= link_to "Contents", admin_contents_path %></li>
+    </ul>
+
+    <ul class="nav navbar-nav pull-right">
+      <li><%= link_to "Logout", admin_logout_path %></li>
+    </ul>
   <% end %>
+
+  </div>
+
+  <div class="container">
+
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%=bootstrap_alert_class(type)%>">
+      <%= msg %>
+    </div>
+  <% end %>
+
+    <%= yield %>
+  </div>
+
 </body>
 </html>
