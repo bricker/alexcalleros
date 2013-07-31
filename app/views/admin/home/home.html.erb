@@ -1,0 +1,12 @@
+<h3>Quick Nav</h3>
+<div class="list-group">
+    <%= link_to "Add a Video", new_admin_video_path, class: "list-group-item" %>
+
+  <% if @featured_video %>
+    <%= link_to "Edit the Featured Video", edit_admin_video_path(@featured_video), class: "list-group-item" %>
+  <% end %>
+
+  <% if @about_content %>
+    <%= link_to "Edit your About Page", edit_admin_content_path(@about_content), class: "list-group-item" %>
+  <% end %>
+</div>

@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
-class Admin::SessionsController < ApplicationController
-  layout 'admin'
+class Admin::SessionsController < Admin::BaseController
+  skip_before_filter :login_required
 
   def new
     redirect_to admin_root_path, notice: "You are already logged in." if logged_in?
@@ -18,8 +18,7 @@ class Admin::SessionsController < ApplicationController
     end
   end
 
-  #--------------------
-  
+
   def destroy
     session[:logged_in] = nil
     redirect_to admin_root_path, notice: "Logged out."

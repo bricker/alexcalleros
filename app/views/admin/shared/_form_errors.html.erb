@@ -1,0 +1,10 @@
+<% if f.object.errors.present? %>
+  <div class="alert alert-danger">
+    <strong>There are some errors. Correct them and submit the form again.</strong>
+    <ul>
+    <% f.object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
