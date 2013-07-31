@@ -16,7 +16,7 @@
       <%= link_to "Edit", edit_admin_content_path(content), class: "btn btn-info" %>
     </td>
 
-    <td><%= content.key %></td>
+    <td><%= content.key.titleize %></td>
     <td><%= content.updated_at.strftime("%B %e, %Y") %></td>
   </tr>
 <% end %>
