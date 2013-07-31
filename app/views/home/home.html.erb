@@ -3,7 +3,7 @@
 <% @categories.each_with_index do |category, i| %>
   <div class="accordion-group">
     <h3 class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
+      <a class="accordion-toggle <%= 'collapsed' if i > 0 %>" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
         <%= category.title %>
       </a>
     </h3>
