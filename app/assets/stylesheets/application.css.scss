@@ -76,6 +76,7 @@ header {
 nav.main-menu {
     font-weight: bold;
 
+    text-align: center;
     a {
         position: relative;
         display: inline-block;
@@ -146,10 +147,6 @@ footer {
     border: none;
 }
 
-.accordion-heading .accordion-toggle, .accordion-inner {
-    padding: 8px 0;
-}
-
 .videos {
     h3 a {
         font-size: 3em;
@@ -192,7 +189,7 @@ footer {
     nav.main-menu {
         a {
             width: 32%;
-            height: 30px;
+            height: 27px;
             text-align: center;
 
             span {
