@@ -1,0 +1,205 @@
+@import 'compass';
+
+@import 'bootstrap/variables';
+@import 'bootstrap/component-animations';
+@import 'bootstrap/accordion';
+
+@import 'menu/*.png';
+
+html, body,
+h1, h2, h3, h4, h5, h6, p,
+a, em, b, u, i, small, strong,
+img, ul, li,
+article, footer, header,
+audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, footer, header {
+    display: block;
+}
+
+
+body {
+    background: image-url('background.png');
+    background-repeat: repeat;
+    line-height: 1;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-size: 1em;
+    padding: 20px 10px;
+}
+
+article {
+    margin: 0 auto;
+    max-width: 690px;
+}
+
+
+a {
+    text-decoration: none;
+    &:hover, &:active { color: #00aeef; }
+}
+
+
+header {
+    h1 {
+        text-align: center;
+
+        text-transform: uppercase;
+        letter-spacing: -0.4em;
+
+        .alex {
+            vertical-align: top;
+            font-size: 5em;
+        }
+        .calleros {
+            font-size: 6em;
+        }
+    }
+
+    h6 {
+        text-align: center;
+        font-size: 1.4em;
+        text-transform: uppercase;
+
+        margin-bottom: 20px;
+    }
+}
+
+nav.main-menu {
+    font-weight: bold;
+
+    a {
+        position: relative;
+        display: inline-block;
+        width: 216px;
+        height: 44px;
+
+        span {
+            font-family: Helvetica;
+            font-size: 1.5em;
+            letter-spacing: -0.1em;
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            text-transform: uppercase;
+        }
+
+        &.one {
+            @include menu-sprite(one);
+            &:hover { @include menu-sprite(one-hover); }
+            span { color: #fff; }
+        }
+
+        &.two {
+            @include menu-sprite(two);
+            &:hover { @include menu-sprite(two-hover); }
+            span { color: #fff; }
+        }
+
+        &.three {
+            @include menu-sprite(three);
+            &:hover { @include menu-sprite(three-hover); }
+            span { color: #fff; }
+        }
+
+        &.four {
+            @include menu-sprite(four);
+            &:hover { @include menu-sprite(four-hover); }
+            span { color: #000; }
+        }
+
+        &.five {
+            @include menu-sprite(five);
+            &:hover { @include menu-sprite(five-hover); }
+            span { color: #000; }
+        }
+
+        &.six {
+            @include menu-sprite(six);
+            &:hover { @include menu-sprite(six-hover); }
+            span { color: #000; }
+        }
+    }
+}
+
+footer {
+    small {
+        display: block;
+        margin-top: 20px;
+        font-size: 0.7em;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}
+
+.accordion-group, .accordion-inner {
+    border: none;
+}
+
+.accordion-heading .accordion-toggle, .accordion-inner {
+    padding: 8px 0;
+}
+
+.videos {
+    h3 a {
+        font-size: 3em;
+        color: #000;
+        text-transform: lowercase;
+        letter-spacing: -0.1em;
+
+        &:hover {
+            color: #d6582a;
+        }
+    }
+}
+
+
+@media screen and (max-width: 690px) {
+    header {
+        h1 {
+            span { display: inline-block; }
+
+            .alex, .calleros {
+                font-size: 2em;
+                letter-spacing: .5em;
+            }
+
+            .alex {
+                font-style: italic;
+            }
+
+            .calleros {
+                font-weight: bold;
+            }
+        }
+
+        h6 {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    }
+
+    nav.main-menu {
+        a {
+            width: 32%;
+            height: 30px;
+            text-align: center;
+
+            span {
+                display: inline;
+                position: inherit;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
