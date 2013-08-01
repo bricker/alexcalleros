@@ -5,10 +5,10 @@
     <%= form_errors(f) %>
 
     <div class="form-group">
-      <%= f.label :key, nil, class: "col-lg-2 control-label" %>
+      <%= f.label :slug, nil, class: "col-lg-2 control-label" %>
       <div class="col-lg-6 col-sm-6">
-        <%= f.text_field :key, class: "form-control", disabled: record.persisted? %>
-        <p class="help-block">A unique key for this category. For internal use only.</p>
+        <%= f.text_field :slug, class: "form-control", disabled: record.persisted? %>
+        <p class="help-block">A unique slug for URLs. You may leave this blank - it will be generated automatically.</p>
       </div>
     </div>
 
