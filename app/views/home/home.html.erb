@@ -10,7 +10,7 @@
     <div id="collapse<%=i%>" class="accordion-body collapse in">
       <nav class="accordion-inner">
         <% category.videos.each do |video| %>
-          <a href="<%=video.embed_url%>" rel="shadowbox[reel];width=640;height=360"><%= video.title %></a>
+          <a href="<%=video.url%>" rel="shadowbox[reel];width=640;height=360"><%= video.title %></a>
         <% end %>
       </nav>
     </div>

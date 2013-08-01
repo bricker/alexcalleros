@@ -19,7 +19,7 @@
 
     <td><%= video.title %></td>
     <td><%= video.category.try(:title) %></td>
-    <td><%= link_to video.embed_url, video.embed_url %></td>
+    <td><%= link_to video.url, video.url %></td>
   </tr>
 <% end %>
   </tbody>
