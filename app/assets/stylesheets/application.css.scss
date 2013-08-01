@@ -1,4 +1,5 @@
 @import 'compass';
+@import "compass/css3/filter";
 
 @import 'bootstrap/variables';
 @import 'bootstrap/component-animations';
@@ -84,11 +85,12 @@ nav.main-menu {
         height: 44px;
 
         span {
-            font-family: Helvetica;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 400;
             font-size: 1.5em;
             letter-spacing: -0.1em;
             position: absolute;
-            bottom: -4px;
+            bottom: -3px;
             right: 0;
             text-transform: uppercase;
         }
@@ -158,6 +160,71 @@ footer {
             color: #d6582a;
         }
     }
+
+    nav {
+        width: 100%;
+
+        a {
+            display: inline-block;
+            position: relative;
+            width: 47%;
+
+            img {
+                width: 100%;
+            }
+
+            .info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 10px;
+                visibility: hidden;
+                color: #fff;
+
+                h6 {
+                    font-size: 1.5em;
+                    font-style: italic;
+                    margin-bottom: 3px
+                }
+
+                p {
+                    font-size: 0.9em;
+                }
+            }
+
+            &:hover {
+                img {
+                    @include filter(blur(3px) brightness(0.5));
+                }
+
+                .info {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .category-featured {
+        nav {
+            a {
+                width: 95%;
+
+                .info {
+                    bottom: 0;
+                    top: auto;
+                    padding: 20px;
+
+                    h6 {
+                        font-size: 1.8em;
+                    }
+
+                    p {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -196,6 +263,44 @@ footer {
                 display: inline;
                 position: inherit;
                 font-size: 1.2em;
+            }
+        }
+    }
+
+    .videos {
+        h3 a {
+            font-size: 2em;
+        }
+
+        nav {
+            a {
+                .info {
+                    h6 {
+                        font-size: 1em;
+                    }
+
+                    p {
+                        font-size: 0.7em;
+                    }
+                }
+            }
+        }
+
+        .category-featured {
+            nav {
+                a {
+                    .info {
+                        padding: 10px;
+
+                        h6 {
+                            font-size: 1.2em;
+                        }
+
+                        p {
+                            font-size: 0.9em;
+                        }
+                    }
+                }
             }
         }
     }
