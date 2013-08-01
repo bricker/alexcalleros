@@ -3,7 +3,6 @@ class HomeController < ApplicationController
     @contents = Content.all
 
     @resume_url     = @contents.find { |c| c.key == "resume_url" }.try(:text)
-    @reel_url       = @contents.find { |c| c.key == "reel_url" }.try(:text)
     @contact_email  = @contents.find { |c| c.key == "contact_email" }.try(:text)
 
     @categories = Category.order('position').all
