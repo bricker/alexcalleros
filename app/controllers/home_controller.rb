@@ -14,11 +14,11 @@ class HomeController < ApplicationController
       @text = content.text
     end
 
-    render layout: false
+    render layout: 'minimal'
   end
 
   def video
     @video = Video.find_by_slug!(params[:slug])
-    render layout: false
+    render layout: 'minimal'
   end
 end
