@@ -5,7 +5,7 @@ class Admin::CategoriesController < Admin::ResourceController
   def model
     @model_info ||= {
       :class        => Category,
-      :order        => "created_at desc"
+      :order        => "position"
     }
   end
 
