@@ -16,4 +16,5 @@
 /tmp
 
 /public/assets
+/public/uploads
 /config/secrets.yml
