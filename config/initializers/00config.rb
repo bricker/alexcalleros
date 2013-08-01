@@ -9,5 +9,5 @@ end
 
 ADMIN_USERNAME          = config['ADMIN_USERNAME']
 ADMIN_PASSWORD          = config['ADMIN_PASSWORD']
-AWS_ACCESS_KEY_ID       = config['AWS_ACCESS_KEY']
+AWS_ACCESS_KEY_ID       = config['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY   = config['AWS_SECRET_ACCESS_KEY']
