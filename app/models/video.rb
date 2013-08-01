@@ -6,10 +6,12 @@ class Video < ActiveRecord::Base
   }
 
   belongs_to :category
-  validates_presence_of :title, :url, :slug, :thumbnail
   mount_uploader :thumbnail, ThumbnailUploader
 
   before_validation :parameterize_slug
+
+  validates_presence_of :title, :url, :slug, :thumbnail
+  validate :video_url_is_valid
 
 
   def external_id
@@ -26,6 +28,14 @@ class Video < ActiveRecord::Base
 
 
   private
+
+  def video_url_is_valid
+    if !self.source
+      self.errors.add(:url, "is invalid. Vimeo, YouTube, or direct URLS to " \
+                            ".mov, .mp4, .mpeg, .wmv, or .avi files are " \
+                            "accepted.")
+    end
+  end
 
   def parameterize_slug
     if self.slug.present?
