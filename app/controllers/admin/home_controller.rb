@@ -4,8 +4,8 @@ class Admin::HomeController < Admin::BaseController
   def home
     @about_content = Content.find_by_key('about')
 
-    if category = Category.find_by_key("featured")
-      @featured_video = category.videos.order("created_at").last
+    if featured = Category.find_by_slug("featured")
+      @featured_video = featured.videos.order("created_at").last
     end
   end
 end
