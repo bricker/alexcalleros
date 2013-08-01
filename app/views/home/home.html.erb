@@ -7,7 +7,7 @@
         <%= category.title %>
       </a>
     </h3>
-    <div id="collapse<%=i%>" class="accordion-body collapse in">
+    <div id="collapse<%=i%>" class="accordion-body collapse <%= 'in' if i == 0 %>">
       <nav class="accordion-inner">
         <% category.videos.each do |video| %>
           <a href="<%=video.url%>" rel="shadowbox[reel];width=640;height=360"><%= video.title %></a>
