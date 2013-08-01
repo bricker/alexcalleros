@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @reel_url       = @contents.find { |c| c.key == "reel_url" }
     @contact_email  = @contents.find { |c| c.key == "contact_email" }
 
-    @categories = Category.includes(:videos).all
+    @categories = Category.order('position').includes(:videos).all
   end
 
   def about
