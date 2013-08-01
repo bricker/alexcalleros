@@ -1,7 +1,7 @@
 class Video < ActiveRecord::Base
   URL_MATCHERS = {
     "youtube" => %r{youtube\.com/watch\?v=(?<id>\w+)},
-    "vimeo"   => %r{}
+    "vimeo"   => %r{vimeo\.com/(?<id>\d+)}
   }
 
   SOURCE_MATCHERS = {
