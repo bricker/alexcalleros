@@ -1,12 +1,8 @@
 class Video < ActiveRecord::Base
   URL_MATCHERS = {
     "youtube" => %r{youtube\.com/watch\?v=(?<id>\w+)},
-    "vimeo"   => %r{vimeo\.com/(?<id>\d+)}
-  }
-
-  SOURCE_MATCHERS = {
-    %r{youtube} => "youtube",
-    %r{vimeo}   => "vimeo"
+    "vimeo"   => %r{vimeo\.com/(?<id>\d+)},
+    "direct"  => %r{\.(mov|mp4|mpeg|wmv|avi)\z}i
   }
 
   belongs_to :category
@@ -22,8 +18,8 @@ class Video < ActiveRecord::Base
 
   def source
     @source ||= begin
-      if match = SOURCE_MATCHERS.find { |k, _| self.url.match(k) }
-        match[1]
+      if match = URL_MATCHERS.find { |_, v| self.url.match(v) }
+        match[0]
       end
     end
   end
