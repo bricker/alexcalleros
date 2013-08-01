@@ -1,31 +1,12 @@
 @import 'compass';
 @import "compass/css3/filter";
+@import 'compass/reset';
 
 @import 'bootstrap/variables';
 @import 'bootstrap/component-animations';
 @import 'bootstrap/accordion';
 
 @import 'menu/*.png';
-
-html, body,
-h1, h2, h3, h4, h5, h6, p,
-a, em, b, u, i, small, strong,
-img, ul, li,
-article, footer, header,
-audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: inherit;
-    font-weight: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, footer, header {
-    display: block;
-}
-
 
 body {
     background: image-url('background.png');
