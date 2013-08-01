@@ -2,9 +2,9 @@ class HomeController < ApplicationController
   def home
     @contents = Content.all
 
-    @resume_url     = @contents.find { |c| c.key == "resume_url" }
-    @reel_url       = @contents.find { |c| c.key == "reel_url" }
-    @contact_email  = @contents.find { |c| c.key == "contact_email" }
+    @resume_url     = @contents.find { |c| c.key == "resume_url" }.try(:text)
+    @reel_url       = @contents.find { |c| c.key == "reel_url" }.try(:text)
+    @contact_email  = @contents.find { |c| c.key == "contact_email" }.try(:text)
 
     @categories = Category.order('position').includes(:videos).all
   end
