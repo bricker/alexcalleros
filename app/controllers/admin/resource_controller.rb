@@ -13,14 +13,14 @@ class Admin::ResourceController < Admin::BaseController
   end
 
   def show
-    render :edit
+    redirect_to [:edit, :admin, @record]
   end
 
   def create
     @record = model[:class].new(form_params)
     if @record.save
       flash[:notice] = "Added #{model[:class]}"
-      redirect_to model[:index_path]
+      redirect_to [:edit, :admin, @record]
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::ResourceController < Admin::BaseController
   def update
     if @record.update_attributes(form_params)
       flash[:notice] = "Updated #{model[:class]}"
-      redirect_to model[:index_path]
+      redirect_to [:edit, :admin, @record]
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::ResourceController < Admin::BaseController
 
   def destroy
     flash[:notice] = "Removed #{model[:class]}" if @record.destroy
-    redirect_to model[:index_path]
+    redirect_to [:admin, @record]
   end
 
 

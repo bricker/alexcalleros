@@ -5,7 +5,6 @@ class Admin::ContentsController < Admin::ResourceController
   def model
     @model_info ||= {
       :class        => Content,
-      :index_path   => admin_contents_path,
       :order        => "created_at desc"
     }
   end

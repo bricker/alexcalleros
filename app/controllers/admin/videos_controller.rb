@@ -5,7 +5,6 @@ class Admin::VideosController < Admin::ResourceController
   def model
     @model_info ||= {
       :class        => Video,
-      :index_path   => admin_videos_path,
       :order        => "created_at desc"
     }
   end
