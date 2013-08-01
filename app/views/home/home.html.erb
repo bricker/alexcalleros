@@ -1,7 +1,7 @@
 <article class="accordion videos" id="accordion">
 
 <% @categories.each_with_index do |category, i| %>
-  <div class="accordion-group">
+  <div class="accordion-group category-<%=category.slug%>">
     <h3 class="accordion-heading">
       <a class="accordion-toggle <%= 'collapsed' if i > 0 %>" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
         <%= category.title %>
