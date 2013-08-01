@@ -5,8 +5,14 @@ class Category < ActiveRecord::Base
   validates_uniqueness_of :slug
 
   before_validation :parameterize_slug
+  before_save :set_position, if: -> { self.position.blank? }
 
   private
+
+  def set_position
+    self.position = Category.order("position")
+    .where("id != ?", self.id).last.position + 1
+  end
 
   def parameterize_slug
     if self.slug.present?
