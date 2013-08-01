@@ -10,7 +10,7 @@ class Video < ActiveRecord::Base
   }
 
   belongs_to :category
-  validates_presence_of :title, :url
+  validates_presence_of :title, :url, :slug, :thumbnail
   mount_uploader :thumbnail, ThumbnailUploader
 
   before_validation :parameterize_slug
