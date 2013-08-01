@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   URL_MATCHERS = {
-    "youtube" => %r{youtube\.com/watch?v=(?<id>\w)},
+    "youtube" => %r{youtube\.com/watch\?v=(?<id>\w+)},
     "vimeo"   => %r{}
   }
 
@@ -17,11 +17,15 @@ class Video < ActiveRecord::Base
 
 
   def external_id
-    @external_id ||= self.url.match(URL_MATCHERS[self.source])[:id]
+    @external_id ||= self.url.match(URL_MATCHERS[self.source]) { |m| m[:id] }
   end
 
   def source
-    @source ||= SOURCE_MATCHERS.find { |k, _| self.url.match(k) }[1]
+    @source ||= begin
+      if match = SOURCE_MATCHERS.find { |k, _| self.url.match(k) }
+        match[1]
+      end
+    end
   end
 
 

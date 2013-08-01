@@ -1,7 +1,7 @@
 Alexcalleros::Application.routes.draw do
   root to: "home#home"
   get 'about', to: "home#about"
-  get 'video/:slug', to: "home#video"
+  get 'video/:slug', to: "home#video", as: :video
 
   namespace :admin do
     root to: "home#home"
