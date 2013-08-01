@@ -16,4 +16,9 @@ class HomeController < ApplicationController
 
     render layout: false
   end
+
+  def video
+    @video = Video.find_by_slug!(params[:slug])
+    render layout: false
+  end
 end

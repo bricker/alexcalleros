@@ -11,7 +11,7 @@ class Admin::VideosController < Admin::ResourceController
 
   def form_params
     params.require(:video).permit(
-      :title, :description, :url, :category_id, :thumbnail
+      :title, :description, :url, :slug, :category_id, :thumbnail
     )
   end
 end
