@@ -17,4 +17,5 @@
 
 /public/assets
 /public/uploads
+/public/thumbnails
 /config/secrets.yml
