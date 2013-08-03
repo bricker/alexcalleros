@@ -39,7 +39,7 @@
         <% if record.thumbnail.present? %>
           <h6>Current</h6>
           <%= link_to image_tag(record.thumbnail.url, style: "max-width:200px;"), record.thumbnail.url %>
-          <h6>Replce Thumbnail</h6>
+          <h6>Replace Thumbnail</h6>
         <% end %>
 
         <%= f.file_field :thumbnail, class: "form-control" %>
