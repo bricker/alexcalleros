@@ -18,6 +18,11 @@ class HomeController < ApplicationController
 
   def video
     @video = Video.find_by_slug!(params[:slug])
-    render layout: 'minimal'
+
+    if @video.title =~ /\[hidden\]/
+      render "/video_embeds/_hidden_reel", layout: "minimal"
+    else
+      render layout: 'minimal'
+    end
   end
 end
