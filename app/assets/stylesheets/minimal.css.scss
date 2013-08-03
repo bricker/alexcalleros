@@ -1,5 +1,3 @@
-@import 'compass/reset';
-
 body {
     height: 100%;
     background: #000;
@@ -9,4 +7,10 @@ body {
 iframe {
     width: 100%;
     height: 99%;
+}
+
+a { color: #aaa; }
+
+p {
+    line-height: 1.2em;
 }
