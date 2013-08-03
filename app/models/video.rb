@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   URL_MATCHERS = {
-    "youtube" => %r{youtube\.com/watch\?v=(?<id>\w+)},
+    "youtube" => %r{youtube\.com/watch\?v=(?<id>[\w-]+)},
     "vimeo"   => %r{vimeo\.com/(?<id>\d+)},
     "direct"  => %r{\.(mov|mp4|mpeg|wmv|avi)\z}i
   }
