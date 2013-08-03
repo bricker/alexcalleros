@@ -131,6 +131,19 @@ footer {
     border: none;
 }
 
+.webkit .videos nav a:hover img {
+    @include filter(saturate(40%) blur(7px) brightness(-0%));
+}
+
+.chrome .videos nav a:hover img {
+    @include filter(brightness(0.5) blur(3px));
+}
+
+.gecko .videos nav a:hover img {
+    @include filter(blur(7px));
+    @include filter(saturate(40%));
+}
+
 .videos {
     h3 a {
         font-size: 3em;
