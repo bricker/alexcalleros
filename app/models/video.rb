@@ -10,16 +10,21 @@ class Video < ActiveRecord::Base
 
   before_validation :parameterize_slug
 
-  validates_presence_of :title, :url, :slug, :thumbnail
+  validates_presence_of :title, :slug, :thumbnail
+  validate :video_url_or_embed_code_present
   validate :video_url_is_valid
 
 
   def external_id
-    @external_id ||= self.url.match(URL_MATCHERS[self.source]) { |m| m[:id] }
+    @external_id ||= begin
+      return nil if self.url.blank?
+      self.url.match(URL_MATCHERS[self.source]) { |m| m[:id] }
+    end
   end
 
   def source
     @source ||= begin
+      return "embed_code" if self.embed_code.present?
       if match = URL_MATCHERS.find { |_, v| self.url.match(v) }
         match[0]
       end
@@ -28,6 +33,12 @@ class Video < ActiveRecord::Base
 
 
   private
+
+  def video_url_or_embed_code_present
+    if self.embed_code.blank? && self.url.blank?
+      self.errors.add(:base, "Embed Code or URL must be present.")
+    end
+  end
 
   def video_url_is_valid
     if !self.source

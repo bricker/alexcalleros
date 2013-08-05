@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801080725) do
+ActiveRecord::Schema.define(version: 20130805065119) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130801080725) do
     t.datetime "updated_at"
     t.string   "slug"
     t.integer  "position"
+    t.string   "sub_title"
   end
 
   add_index "categories", ["position"], name: "index_categories_on_position"
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130801080725) do
     t.datetime "updated_at"
     t.string   "thumbnail"
     t.string   "slug"
+    t.text     "embed_code"
   end
 
   add_index "videos", ["category_id"], name: "index_videos_on_category_id"

@@ -29,7 +29,15 @@
       <%= f.label :url, "Video URL.", class: "col-lg-2 control-label" %>
       <div class="col-lg-6 col-sm-6">
         <%= f.text_field :url, class: "form-control" %>
-        <p class="help-block">Youtube, Vimeo, or direct URLs to .mov, .mp4, .mpeg, .avi, or .wmv videos are accepted.</p>
+        <p class="help-block"><strong>Recommended</strong> - Youtube, Vimeo, or direct URLs to .mov, .mp4, .mpeg, .avi, or .wmv videos are accepted.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :embed_code, "Embed Code", class: "col-lg-2 control-label" %>
+      <div class="col-lg-6 col-sm-6">
+        <%= f.text_area :embed_code, class: "form-control" %>
+        <p class="help-block"><strong>Optional</strong> - Only use this if pasting a URL above won't work. This will be used even if you've provided a URL.</p>
       </div>
     </div>
 
