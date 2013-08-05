@@ -10,6 +10,6 @@ class Admin::CategoriesController < Admin::ResourceController
   end
 
   def form_params
-    params.require(:category).permit(:slug, :title, :position)
+    params.require(:category).permit(:slug, :title, :sub_title, :position)
   end
 end
