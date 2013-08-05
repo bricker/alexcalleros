@@ -10,7 +10,8 @@ class Video < ActiveRecord::Base
 
   before_validation :parameterize_slug
 
-  validates_presence_of :title, :slug, :thumbnail
+  validates_presence_of :title, :slug
+  validates_presence_of :thumbnail, if: -> { self.category_id.present? }
   validate :video_url_or_embed_code_present
   validate :video_url_is_valid
 
