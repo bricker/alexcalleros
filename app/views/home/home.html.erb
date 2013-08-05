@@ -4,7 +4,7 @@
   <div class="accordion-group category-<%=category.slug%>">
     <h3 class="accordion-heading">
       <a class="accordion-toggle <%= 'collapsed' if i > 0 %>" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=i%>">
-        <%= category.title %>
+        <%= category.title.html_safe %>
       </a>
     </h3>
     <div id="collapse<%=i%>" class="accordion-body collapse <%= 'in' if i == 0 %>">

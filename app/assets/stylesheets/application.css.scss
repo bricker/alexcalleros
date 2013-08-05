@@ -127,12 +127,13 @@ footer {
 
 }
 
+
 .accordion-group, .accordion-inner {
     border: none;
 }
 
 .webkit .videos nav a:hover img {
-    @include filter(saturate(40%) blur(7px) brightness(-0%));
+    @include filter(blur(5px) brightness(-15%) saturate(30%));
 }
 
 .chrome .videos nav a:hover img {
@@ -143,6 +144,7 @@ footer {
     @include filter(blur(7px));
     @include filter(saturate(40%));
 }
+
 
 .videos {
     h3 a {
@@ -161,9 +163,12 @@ footer {
             display: inline-block;
             position: relative;
             width: 47%;
+            overflow: hidden;
+            margin: 0 5px 5px 0;
 
             img {
                 width: 100%;
+                margin: -3px -6px -6px -3px;
             }
 
             .info {
@@ -173,6 +178,8 @@ footer {
                 padding: 10px;
                 visibility: hidden;
                 color: #fff;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 
                 h6 {
                     font-size: 1.5em;
