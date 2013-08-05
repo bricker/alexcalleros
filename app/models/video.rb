@@ -12,7 +12,6 @@ class Video < ActiveRecord::Base
 
   validates_presence_of :title, :slug
   validates_presence_of :thumbnail, if: -> { self.category_id.present? }
-  validate :video_url_or_embed_code_present
   validate :video_url_is_valid
 
 
@@ -26,6 +25,7 @@ class Video < ActiveRecord::Base
   def source
     @source ||= begin
       return "embed_code" if self.embed_code.present?
+      return "hidden" if self.url.blank?
       if match = URL_MATCHERS.find { |_, v| self.url.match(v) }
         match[0]
       end
@@ -34,12 +34,6 @@ class Video < ActiveRecord::Base
 
 
   private
-
-  def video_url_or_embed_code_present
-    if self.embed_code.blank? && self.url.blank?
-      self.errors.add(:base, "Embed Code or URL must be present.")
-    end
-  end
 
   def video_url_is_valid
     if !self.source
