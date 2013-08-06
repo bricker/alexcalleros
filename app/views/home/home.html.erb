@@ -12,7 +12,7 @@
     </h3>
     <div id="collapse<%=i%>" class="accordion-body collapse <%= 'in' if i == 0 %>">
       <nav class="accordion-inner">
-        <% category.videos.order("position asc, created_at desc").each do |video| %>
+        <% category.videos.order("position is null, position asc, created_at desc").each do |video| %>
           <a href="<%=video_path(video.slug)%>.html" rel="shadowbox[reel];width=640;height=360" title="<%=video.title%>">
             <%= image_tag(video.thumbnail_url) %>
             <div class="info">

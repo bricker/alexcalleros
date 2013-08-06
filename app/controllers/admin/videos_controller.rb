@@ -18,7 +18,8 @@ class Admin::VideosController < Admin::ResourceController
       :slug,
       :category_id,
       :thumbnail,
-      :remove_thumbnail
+      :remove_thumbnail,
+      :position
     )
   end
 end

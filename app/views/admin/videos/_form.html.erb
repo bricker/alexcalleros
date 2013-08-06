@@ -19,6 +19,16 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :position, nil, class: "col-lg-2 control-label" %>
+      <div class="col-lg-2 col-sm-2">
+        <%= f.number_field :position, class: "form-control" %>
+      </div>
+      <div class="col-lg-6 col-sm-6">
+        <p class="help-block"><strong>Optional</strong> - The video's position within the category. Videos without a category will be displayed last, ordered by when they were added.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
       <%= f.label :description, nil, class: "col-lg-2 control-label" %>
       <div class="col-lg-6 col-sm-6">
         <%= f.text_area :description, class: "form-control" %>
